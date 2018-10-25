@@ -6,7 +6,7 @@ async function createBook(req, res) {
     try {
         const book = new Book(req.body);
         await book.save();
-        res.status(201).send(book);
+        return res.status(201).json(book);
     } catch (err) {
         console.error(err);
     }
