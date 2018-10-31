@@ -7,10 +7,10 @@ const authorization = require('./middleware/authorization');
 const books = require('./book/routes');
 
 function register(app) {
-    app.use('/health-check', healthCheck);
-    app.use(authorization);
+    app.use('/api/health-check', healthCheck);
+    // app.use(authorization);
     app.use(bodyParser.json({limit: '1mb'}));
-    app.use('/books', books);
+    app.use('/api/books', books);
 }
 
 module.exports = {
